@@ -3,7 +3,7 @@
 
 ### Assignment 1
 
-- [ ] search.htm - A search page that allows drivers to search for parking spots using information about distance, price, rating etc. in a form.
+- [ ] search.html - A search page that allows drivers to search for parking spots using information about distance, price, rating etc. in a form.
 
 - [ ] results.html - A sample results page showing the results of a search (a) on  a  map,  and  (b)  in  a  tabular  format.    From  the  results  table,  users should be able to link to a more detailed screen for each parking spot.
 
