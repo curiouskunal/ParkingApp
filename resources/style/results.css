@@ -29,3 +29,39 @@ tr:nth-child(odd) {
 .submit-button{
     width: auto;
 }
+
+#ParkingSearch_flex{
+    display: flex;
+    flex-direction: row;
+}
+
+#Price_flex{
+    display: flex;
+    flex-direction: row;
+}
+#Dis_rating_flex{
+    display: flex;
+    flex-direction: row;
+}
+
+/* horizontal iPhone  */
+@media only screen and (max-device-width: 1040px){
+    #ParkingSearch_flex{
+        flex-direction: column;
+    }
+
+}
+
+/* Vertical iPhone */
+@media only screen and (max-device-width: 480px){
+    #ParkingSearch_flex{
+        flex-direction: column;
+    }
+    #Price_flex{
+        flex-direction: column;
+    }
+    #Dis_rating_flex{
+        flex-direction: column;
+    }
+
+}

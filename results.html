@@ -38,30 +38,46 @@
         <div class="horizontal-wrapper">
             <form action="results.html" id="ParkingSearch">
                 <fieldset>
-                    <legend>Search</legend>
-                    <label for="search-min-price">Minimum Price:</label> 
-                    <input id="search-min-price" type="number" name="MinPrice" min="0">
-                    <label for="search-max-price">Maximum Price:</label> 
-                    <input id="search-max-price" type="number" name="MaxPrice" min="0">
-                    <label for="search-distance">Distance:</label> 
-                    <input id="search-distance" type="number" name="distance" min="0">
-                    <label for="search-min-rating">Rating:</label> 
-                    <select id="search-min-rating" name="MinRating">
-                        <option value="1" selected="selected">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    to
-                    <select id="search-max-rating" name="MaxRating">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5" selected="selected">5</option>
-                    </select>
-                    <input class="submit-button" type="submit" value="Search">
+                    <legend>Search Results</legend>
+                    <div id="ParkingSearch_flex">
+                        <div id="Price_flex">
+                            <div>
+                                <label for="search-min-price">Minimum Price:</label> 
+                                <input id="search-min-price" type="number" name="MinPrice" min="0">
+                            </div>
+                            <div> 
+                                <label for="search-max-price">Maximum Price:</label> 
+                                <input id="search-max-price" type="number" name="MaxPrice" min="0">
+                            </div>
+                        </div>
+                        <div id="Dis_rating_flex">
+                            <div>
+                                <label for="search-distance">Distance:</label> 
+                                <input id="search-distance" type="number" name="distance" min="0">
+                            </div>
+                            <div>
+                                <label for="search-min-rating">Rating:</label> 
+                                <select id="search-min-rating" name="MinRating">
+                                    <option value="1" selected="selected">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                to
+                                <select id="search-max-rating" name="MaxRating">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5" selected="selected">5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class = center>
+                            <input class="submit-button" type="submit" value="Search">
+                    </div>
+                </div>
                 </fieldset>
             </form>
         </div>
