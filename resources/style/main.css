@@ -90,11 +90,14 @@ footer{
 }
 
 /* horizontal iPhone  */
-@media only screen and (max-device-width: 800px){
+@media only screen and (max-device-width: 788px){
     :root {
         --header-size: 92px;
         --footer-size: 30px;
-      }
+    }
+    .nav a {
+        padding: 0.5em 2em;
+    }
     
     body{
         font-size: 125%;
@@ -107,12 +110,19 @@ footer{
 /* Vertical iPhone */
 @media only screen and (max-device-width: 480px){
     :root {
-        --header-size: 128px;
+        --header-size: 210px;
         --footer-size: 50px;
-      }
+    }
     
     body{
         font-size: 200%;
+    }
+    .navbar {
+        flex-direction: column;
+        text-align: center
+    }
+    .nav a {
+        padding: 0.5em 1.5em;
     }
     .horizontal-wrapper{
         background-color: red;
