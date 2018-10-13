@@ -14,57 +14,47 @@
 </head>
 
 <header>
-    <div class="container navbar">
+    <div class="navbar">
         <h1>Parking App</h1>
         <nav>
             <ul class="nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="search.html">Search</a></li>
-                <li><a href="index.html">Logout</a></li>>
+                    <li><a href="index.html"><div>Home</div></a></li>
+                    <li><a href="search.html">Search</a></li>
+                    <li><a href="submission.html">Submit</a></li>
+                    <li><a href="profile.html">My Profile</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
 <body>
-
-<div id= signUP>
-    <form action="">
-        <fieldset>
-            <legend>Sign Up</legend>
-            First name:<br>
-            <input type="text" name="firstname" placeholder="first" >
-            <br>
-            Last name:<br>
-            <input type="text" name="lastname" placeholder="last">
-            <br>
-            email:<br>
-            <input type="email" name="lastname" value="">
-            <br>
-            password:<br>
-            <input type="password" name="lastname" value="">
-            <br><br>
-            <input type="submit" value="Submit">
-        </fieldset>
-    </form>
+<div class=page-wrap>
+    <div class="horizontal-wrapper">
+        <form id="signupForm" action="search.html">
+            <fieldset>
+                <legend>Sign Up</legend>
+                <label for="signup-name">Full Name:</label> 
+                <input id="signup-name" type="text" name="Name"><br>
+                
+                <label for="signup-email">Email:</label> 
+                <input id="signup-email" type="email" name="email" value="">
+                <br>
+                <label for="signup-password">Password:</label> 
+                <input id="signup-password" type="password" name="password" value=""><br>
+                <label for="signup-re-password">Retype Password:</label> 
+                <input id="signup-re-password" type="password" name="re-password" value=""><br>
+                <div class="center">
+                    <input class="submit-button" type="submit" value="Submit">
+                </div>
+            </fieldset>
+        </form>
+    </div>
 </div>
-
-
-<div id= LogIN>
-    <form action="">
-        <fieldset>
-            <legend>Login</legend>
-            email:<br>
-            <input type="email" name="lastname" value="">
-            <br>
-            password:<br>
-            <input type="password" name="lastname" value="">
-            <br><br>
-            <input type="submit" value="Submit">
-        </fieldset>
-    </form>
-</div>
-
 
 </body>
+
+<footer>
+        Kunal Shah • shahk24
+</footer>
+
 </html>

@@ -8,9 +8,22 @@
     <meta name="keywords" content="assignemnt, parking, 4ww3" />
     <meta name="robots" content="noindex" />
 
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/icons/favicon-16x16.png">
+
+
+    <meta property="og:image:width" content="700">
+    <meta property="og:image:height" content="366">
+    <meta property="og:title" content="Parking App">
+    <meta property="og:description" content="Web app that allows you to search and reserve nearby parking spots">
+    <meta property="og:url" content="kunalshah.ca/ParkingApp">
+    <meta property="og:image" content="resources/images/parking-lot.jpg">
+
     <link href="resources/style/normalize.css" rel="stylesheet" type="text/css">
     <link href="resources/style/main.css" rel="stylesheet" type="text/css">
     <link href="resources/style/index.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
 </head>
 
 <header>
@@ -20,7 +33,8 @@
             <ul class="nav">
                 <li><a class="current" href="index.html"><div>Home</div></a></li>
                 <li><a href="search.html">Search</a></li>
-                <li><a href="index.html">Logout</a></li>
+                <li><a href="submission.html">Submit</a></li>
+                <li><a href="profile.html">My Profile</a></li>
             </ul>
         </nav>
     </div>
@@ -29,16 +43,34 @@
 <body>
     <div class=page-wrap>
         <div class="horizontal-wrapper">
-            Search <br>
-            Login <br>
-            Register<br>
-            submit new spot<br>
+                <div id="login">
+                        <form id="loginForm" action="search.html">
+                            <fieldset>
+                                <legend>Login</legend>
+                                <label for="login-email">Email:</label> 
+                                <input id="login-email"type="email" name="email" required><br>
+                                <label for="login-password">Password:</label>
+                                <input id="login-password"type="password" name="password" required><br>
+                                <div class="center">
+                                    <input class="submit-button" type="submit" value="Login">
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div id="register">
+                            <p>Don't Have an account?</p>
+                            <div class="center"></div>
+                                <a href="register.html"> Sign Up</a>
+                            </div>
+                            
+                        </div>
+                </div>
+ 
         </div>
     </div>
 
 </body>
 
 <footer>
-    Kunal Shah • shahk24 • 001419350
+    Kunal Shah • shahk24
 </footer>
 </html>

@@ -89,6 +89,92 @@ footer{
     border-color: #9B9B9B;
 }
 
+input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 12px 0;
+    box-sizing: border-box;
+    border: 1px solid grey;
+}
+
+input:focus {
+    background-color: lightblue;
+}
+
+select{
+    margin: 15px 20px;
+}
+
+#register{
+    text-align: center;
+}
+
+#register p{
+    text-align: center;
+    border-bottom: 3px solid black;
+    color: Black;
+    font-size:150%;
+}
+
+#register a{
+    font:80%/1 sans-serif;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid grey;
+}
+
+.submit-button, #register a{
+    color: black;
+    display: inline-block;
+    padding: 0.5em 0.75em;
+    border-radius: 30px;
+    text-decoration: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color:#9B9B9B;
+    width: 100px;
+}
+
+.submit-button:hover , #register a:hover {
+    background-color: #BFBFBF;
+    border-color: #9B9B9B;  
+  }
+
+#login{
+    width: 50%;
+}
+
+fieldset {
+    padding: 1em;
+    font:80%/1 sans-serif;
+    border:1px solid transparent;
+    }
+label {
+    float:left;
+    width:25%;
+    margin-right:0.5em;
+    padding-top:0.2em;
+    text-align:right;
+    font-weight:bold;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+
+legend {
+    text-align: center;
+    padding-top: 1em;
+    border-bottom:3px solid black;
+    color:Black;
+    font-size:150%;
+    }
+
+.center{
+    text-align: center;
+    padding: 0;
+}
+
 /* horizontal iPhone  */
 @media only screen and (max-device-width: 788px){
     :root {
@@ -104,6 +190,10 @@ footer{
     }
     .horizontal-wrapper{
         background-color: blue;
+    }
+
+    #login{
+        width: 75%;
     }
 }
 
@@ -126,6 +216,14 @@ footer{
     }
     .horizontal-wrapper{
         background-color: red;
+    }
+
+    #login{
+        width: 100%;
+    }
+
+    .submit-button{
+        width: 200px;
     }
 }
 
