@@ -1,0 +1,57 @@
+.results a, .right a {
+    color: #fff;
+    display: inline-block;
+    padding: 0.5em 0.75em;
+    background-color: #666;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  
+  .results a:hover , .right a:hover {
+    background-color: #000;
+  }
+  
+  .results .current , .right .current {
+    background-color: red;
+  }
+  
+  
+  #spot{
+      width: 300px;
+  }
+  
+  .left{
+      width: 50%;
+      background-color: #eee;
+      text-align: center;
+  }
+  
+  .right {
+      width: 50%;
+      background-color: #ddd;
+      text-align: center;
+  }
+  
+  table{
+      width: 100%;
+      background-color: white;
+  }
+  
+  .reviews th{
+      width: 50%;
+  }
+  
+  th{
+      text-align: left;
+      border: 1px solid black;
+  }
+  
+  td{
+      text-align: left;
+      border: 1px solid black;
+  }
+  
+  .reviewProfileImage{
+      vertical-align: middle;
+  }
+  

@@ -1,0 +1,121 @@
+:root {
+    --header-size: 80px;
+    --footer-size: 30px;
+  }
+
+
+html {
+  font: normal 100%/1.5 Georgia,serif;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+header {
+    max-height: var(--header-size);
+    background-color: #e2e2e2;
+    padding: 16px 0;
+}
+.page-wrap::before{
+    content: "";
+    display: block;
+    padding-top: var(--header-size);
+}
+.page-wrap {
+    min-height: 100%;
+    margin-top: calc(-1 * var(--header-size)); /* equal to header height */
+    margin-bottom: calc(-1 * var(--footer-size)); /* equal to footer height */
+  }
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+
+footer, .page-wrap:after { 
+    height: var(--footer-size);
+}
+
+footer{
+    background-color: rgb(221, 221, 221);
+    text-align: center;
+    font-weight: 600;
+}
+
+.horizontal-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+.nav a {
+  color: black;
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  border-radius: 30px;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color:transparent;
+}
+
+.nav a:hover {
+  background-color: #BFBFBF;
+  border-color: #9B9B9B;  
+}
+
+.nav .current {
+    border-color: #9B9B9B;
+}
+
+/* horizontal iPhone  */
+@media only screen and (max-device-width: 800px){
+    :root {
+        --header-size: 92px;
+        --footer-size: 30px;
+      }
+    
+    body{
+        font-size: 125%;
+    }
+    .horizontal-wrapper{
+        background-color: blue;
+    }
+}
+
+/* Vertical iPhone */
+@media only screen and (max-device-width: 480px){
+    :root {
+        --header-size: 128px;
+        --footer-size: 50px;
+      }
+    
+    body{
+        font-size: 200%;
+    }
+    .horizontal-wrapper{
+        background-color: red;
+    }
+}
+
