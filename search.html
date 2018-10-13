@@ -11,13 +11,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="resources/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="resources/icons/favicon-16x16.png">
 
-    <meta property="og:image:width" content="1190">
-    <meta property="og:image:height" content="623">
-    <meta property="og:title" content="Parking App">
-    <meta property="og:description" content="Web app that allows you to search and reserve nearby parking spots">
-    <meta property="og:url" content="kunalshah.ca/ParkingApp">
-    <meta property="og:image" content="resources/images/parking-lot.jpg">
-
     <link href="resources/style/normalize.css" rel="stylesheet" type="text/css">
     <link href="resources/style/main.css" rel="stylesheet" type="text/css">
     <link href="resources/search.css" rel="stylesheet" type="text/css">
@@ -39,39 +32,48 @@
 </header>
 
 <body>
-    <div class="horizontal-wrapper">
-        <div class="vertical-wrapper">
-            <div class="content">
-                <form action="results.html" id="ParkingSubmition">
-                    <fieldset>
-                        <legend>Search</legend>
-                        <label for="search-min-price">Minimum Price:</label> 
-                        <input id="search-min-price" type="number" name="MinPrice"><br>
-                        <label for="search-max-price">Maximum Price:</label> 
-                        <input id="search-max-price" type="number" name="MaxPrice"><br>
-                        <label for="search-distance">Distance:</label> 
-                        <input id="search-distance" type="number" name="distance"><br>
-                        <label for="search-min-rating">Rating:</label> 
-                        <select id="search-min-rating" name="MinRating">
-                            <option value="1" selected="selected">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        to
-                        <select id="search-max-rating" name="MaxRating">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5" selected="selected">5</option>
-                        </select>
-                        <input class="submit-button" type="submit" value="Search">
-                    </fieldset>
-                </form>
+    <div class=page-wrap>
+            <div class="horizontal-wrapper">
+                <div id="login">
+                    <form action="results.html" id="ParkingSubmition">
+                        <fieldset>
+                            <legend>Search</legend>
+                            <label for="search-min-price">Minimum Price:</label> 
+                            <input id="search-min-price" type="number" name="MinPrice" min="0"><br>
+                            <label for="search-max-price">Maximum Price:</label> 
+                            <input id="search-max-price" type="number" name="MaxPrice" min="0"><br>
+                            <label for="search-distance">Distance:</label> 
+                            <input id="search-distance" type="number" name="distance" min="0"><br>
+                            <div class=rating>
+                            <label for="search-min-rating">Rating:</label> 
+                                <select id="search-min-rating" name="MinRating">
+                                    <option value="1" selected="selected">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                to
+                                <select id="search-max-rating" name="MaxRating">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5" selected="selected">5</option>
+                                </select>
+                            </div><br>
+                            <div class="center">
+                                <input class="submit-button" type="submit" value="Search">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
+<footer>
+        Kunal Shah • shahk24
+</footer>
 </html>

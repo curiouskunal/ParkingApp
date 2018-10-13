@@ -16,7 +16,7 @@ body {
 
 header {
     max-height: var(--header-size);
-    background-color: #e2e2e2;
+    background-color: #228560;
     padding: 16px 0;
 }
 .page-wrap::before{
@@ -39,7 +39,7 @@ footer, .page-wrap:after {
 }
 
 footer{
-    background-color: rgb(221, 221, 221);
+    background-color: #228560;;
     text-align: center;
     font-weight: 600;
 }
@@ -81,8 +81,8 @@ footer{
 }
 
 .nav a:hover {
-  background-color: #BFBFBF;
-  border-color: #9B9B9B;  
+  background-color: #E8E8E8;
+  border-color: white;  
 }
 
 .nav .current {
@@ -146,7 +146,7 @@ select{
     width: 50%;
 }
 
-fieldset {
+fieldset {  
     padding: 1em;
     font:80%/1 sans-serif;
     border:1px solid transparent;
@@ -188,9 +188,6 @@ legend {
     body{
         font-size: 125%;
     }
-    .horizontal-wrapper{
-        background-color: blue;
-    }
 
     #login{
         width: 75%;
@@ -213,9 +210,6 @@ legend {
     }
     .nav a {
         padding: 0.5em 1.5em;
-    }
-    .horizontal-wrapper{
-        background-color: red;
     }
 
     #login{

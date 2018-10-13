@@ -1,0 +1,31 @@
+input {
+    width: 100px;
+}
+label {
+    float: none;;
+    width:100%;
+}
+#ParkingSearch{
+    border-bottom: 3px solid black;
+}
+
+.results th , .results td{
+    width: 300px;
+    border: 1px solid black;
+}
+
+#resultsTable{
+    border-collapse: collapse;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: rgb(219, 219, 219)
+}
+tr:nth-child(odd) {
+    background: #FFF
+}
+
+.submit-button{
+    width: auto;
+}

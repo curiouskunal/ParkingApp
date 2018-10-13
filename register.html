@@ -11,11 +11,12 @@
     <link href="resources/style/normalize.css" rel="stylesheet" type="text/css">
     <link href="resources/style/main.css" rel="stylesheet" type="text/css">
     <link href="resources/style/register.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 
 <header>
     <div class="navbar">
-        <h1>Parking App</h1>
+        <h1><i class="fas fa-parking"></i>arking App</h1>
         <nav>
             <ul class="nav">
                     <li><a href="index.html"><div>Home</div></a></li>
@@ -30,24 +31,26 @@
 <body>
 <div class=page-wrap>
     <div class="horizontal-wrapper">
-        <form id="signupForm" action="search.html">
-            <fieldset>
-                <legend>Sign Up</legend>
-                <label for="signup-name">Full Name:</label> 
-                <input id="signup-name" type="text" name="Name"><br>
-                
-                <label for="signup-email">Email:</label> 
-                <input id="signup-email" type="email" name="email" value="">
-                <br>
-                <label for="signup-password">Password:</label> 
-                <input id="signup-password" type="password" name="password" value=""><br>
-                <label for="signup-re-password">Retype Password:</label> 
-                <input id="signup-re-password" type="password" name="re-password" value=""><br>
-                <div class="center">
-                    <input class="submit-button" type="submit" value="Submit">
-                </div>
-            </fieldset>
-        </form>
+        <div id="login">
+            <form id="signupForm" action="search.html">
+                <fieldset>
+                    <legend>Sign Up</legend>
+                    <label for="signup-name">Full Name:</label> 
+                    <input id="signup-name" type="text" name="Name"><br>
+                    
+                    <label for="signup-email">Email:</label> 
+                    <input id="signup-email" type="email" name="email" value="">
+                    <br>
+                    <label for="signup-password">Password:</label> 
+                    <input id="signup-password" type="password" name="password" value=""><br>
+                    <label for="signup-re-password">Retype Password:</label> 
+                    <input id="signup-re-password" type="password" name="re-password" value=""><br>
+                    <div class="center">
+                        <input class="submit-button" type="submit" value="Submit">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
     </div>
 </div>
 

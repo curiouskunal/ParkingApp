@@ -8,87 +8,107 @@
     <meta name="keywords" content="assignemnt, parking, 4ww3" />
     <meta name="robots" content="noindex" />
 
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/icons/favicon-16x16.png">
+
+
     <link href="resources/style/normalize.css" rel="stylesheet" type="text/css">
     <link href="resources/style/main.css" rel="stylesheet" type="text/css">
     <link href="resources/style/results.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
 </head>
 
 <header>
     <div class="container navbar">
-        <h1>Parking App</h1>
+        <h1><i class="fas fa-parking"></i>arking App</h1>
         <nav>
             <ul class="nav">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html"><div>Home</div></a></li>
                 <li><a href="search.html">Search</a></li>
-                <li><a href="index.html">Logout</a></li>
+                <li><a href="submission.html">Submit</a></li>
+                <li><a href="profile.html">My Profile</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
 <body>
-    <form action="" id="ParkingSubmition">
-        <fieldset>
-            <legend>Search</legend>
-            Minimum Price:<input type="number" name="firstname" placeholder="$0" >
+    <div class=page-wrap>
+        <div class="horizontal-wrapper">
+            <form action="results.html" id="ParkingSearch">
+                <fieldset>
+                    <legend>Search</legend>
+                    <label for="search-min-price">Minimum Price:</label> 
+                    <input id="search-min-price" type="number" name="MinPrice" min="0">
+                    <label for="search-max-price">Maximum Price:</label> 
+                    <input id="search-max-price" type="number" name="MaxPrice" min="0">
+                    <label for="search-distance">Distance:</label> 
+                    <input id="search-distance" type="number" name="distance" min="0">
+                    <label for="search-min-rating">Rating:</label> 
+                    <select id="search-min-rating" name="MinRating">
+                        <option value="1" selected="selected">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    to
+                    <select id="search-max-rating" name="MaxRating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5" selected="selected">5</option>
+                    </select>
+                    <input class="submit-button" type="submit" value="Search">
+                </fieldset>
+            </form>
+        </div>
 
-            Maximum Price:<input type="number" name="firstname" placeholder="$100" >
-            Distance:<input type="number" name="firstname" placeholder="1 km" >
-            Rating:
-            <select name="Min Stars">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            to
-            <select name="Max Stars">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <input type="submit" value="Submit">
-        </fieldset>
-    </form>
+        <div class="center">
+            <img src="resources/images/Large_parking-spot_map.png" alt="Parking Map" width="600px">
+        </div>
 
-    <img src="resources/images/Large_parking-spot_map.png" alt="Parking Map" width="600px">
+        <div class="horizontal-wrapper">
+                <div class="results">
+                        <table id="resultsTable">
+                            <tr>
+                                <th>Name</th>
+                                <th>Distance</th>
+                                <th>Price</th>
+                                <th>Rating</th>
+                                <th>  </th>
+                            </tr>
+                            <tr>
+                                <td>Lot M - Spot 1A</td>
+                                <td>0.5 KM</td>
+                                <td>$50</td>
+                                <td>★★★☆☆</td>
+                                <td><a class="submit-button" href="parking.html"> details </a></td>
+                            </tr>
+                            <tr>
+                                <td>Lot M - Spot 1B</td>
+                                <td>0.5 KM</td>
+                                <td>$50</td>
+                                <td>★★★☆☆</td>
+                                <td><a class="submit-button" href="parking.html"> details </a></td>
+                            </tr>
+                            <tr>
+                                <td>Lot M - Spot 1C</td>
+                                <td>0.5 KM</td>
+                                <td>$50</td>
+                                <td>★★★☆☆</td>
+                                <td><a class="submit-button" href="parking.html"> details </a></td>
+                            </tr>
+                        </table>
+                    </div>
 
-
-
-    <div class="results">
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Distance</th>
-                <th>Price</th>
-                <th>Rating</th>
-                <th></th>
-            </tr>
-            <tr>
-                <td>Lot M - Spot 1A</td>
-                <td>0.5 KM</td>
-                <td>$50</td>
-                <td>★★★☆☆</td>
-                <td><a class="current" href="parking.html"> details </a></td>
-            </tr>
-            <tr>
-                <td>Lot M - Spot 1B</td>
-                <td>0.5 KM</td>
-                <td>$50</td>
-                <td>★★★☆☆</td>
-                <td><a class="current" href="parking.html"> details </a></td>
-            </tr>
-            <tr>
-                <td>Lot M - Spot 1C</td>
-                <td>0.5 KM</td>
-                <td>$50</td>
-                <td>★★★☆☆</td>
-                <td><a class="current" href="parking.html"> details </a></td>
-            </tr>
-        </table>
+        </div>
     </div>
 </body>
+
+<footer>
+        Kunal Shah • shahk24
+</footer>
 </html>
