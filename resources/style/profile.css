@@ -33,6 +33,7 @@ button{
 }
 
 .requestTable{
+    /* table will only have 1 border around */
     border-collapse: collapse;
     text-align: center;
 }
@@ -91,11 +92,13 @@ tr:nth-child(odd) {
 
     .right{
         width: 100%;
+        /* will show up on top in mobile */
         order: 1;
     }
     
     .left{
         width: 100%;
+        /* will show up second (bottom)*/
         order: 2;
     }
 }

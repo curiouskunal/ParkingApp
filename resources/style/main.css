@@ -1,24 +1,32 @@
+/* Global variables for header and footer 
+heights used to change in the media queries */
 :root {
     --header-size: 80px;
     --footer-size: 30px;
 }
 
-
+/* setting the global fonts and setting html height to full page */
 html {
     font: normal 100%/1.5 Georgia,serif;
     height: 100%;
 }
 
+/* setting  body to full page*/
 body {
     margin: 0;
     height: 100%;
 }
 
 header {
+    /* header will have max height from global variable */
     max-height: var(--header-size);
     background-color: #228560;
     padding: 16px 0;
 }
+
+/* used to offset the body content from the header */
+/* adding an empty block of the same size as the headder
+to offset the full size page wrap */
 .page-wrap::before{
     content: "";
     display: block;
@@ -29,30 +37,43 @@ header {
     margin-top: calc(-1 * var(--header-size)); /* equal to header height */
     margin-bottom: calc(-1 * var(--footer-size)); /* equal to footer height */
   }
+/* used to offset the body content from the footer */
+
+/* if there is not enough contnet on the page the footer will 
+stick to the bottom of the page */
+
+/* adding an empty block of the same size as the footer
+to offset the full size page wrap at the bottom */
 .page-wrap:after {
     content: "";
     display: block;
+    height: var(--footer-size);
 }
 
-footer, .page-wrap:after { 
+/* footer height is set by the global variable */
+footer { 
     height: var(--footer-size);
 }
 
 footer{
     background-color: #228560;;
     text-align: center;
+    /* make footer text bold */
     font-weight: 600;
 }
 
+/* use flex box to center the content */
 .horizontal-wrapper{
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
+/* nav bar will use flexbox to seperate the header */
 .navbar {
     display: flex;
     flex-direction: row;
+    /* space-between makes content go to furthest either end of the parent box */
     justify-content: space-between;
     margin-left: 10px;
     margin-right: 10px;
@@ -65,10 +86,12 @@ footer{
   text-align: center;
 }
 
+/* nav bar buttons go in a row instead of on top of eachother */
 .nav li {
   display: inline-block;
 }
 
+/* styling the nav buttons */
 .nav a {
   color: black;
   display: inline-block;
@@ -80,16 +103,19 @@ footer{
   border-color:transparent;
 }
 
+/* when you hover on the nav buttons */
 .nav a:hover {
   background-color: #E8E8E8;
   border-color: white;  
 }
 
+/* current style for the active page */
 .nav .current {
     border-color: white;
     border-width: 3px;
 }
 
+/* global input box style */
 input {
     width: 50%;
     padding: 12px 20px;
@@ -98,6 +124,7 @@ input {
     border: 1px solid grey;
 }
 
+/* when the input box is clicked and you are using it */
 input:focus {
     background-color: lightblue;
 }
@@ -126,6 +153,7 @@ select{
     border: 1px solid grey;
 }
 
+/* style 2 classes at the same time */
 .submit-button, #register a{
     color: black;
     display: inline-block;
@@ -176,7 +204,8 @@ legend {
     padding: 0;
 }
 
-/* horizontal iPhone  */
+/* horizontal iPhone media query  */
+/* update styles based on the device width */
 @media only screen and (max-device-width: 788px){
     :root {
         --header-size: 92px;
@@ -196,6 +225,7 @@ legend {
 }
 
 /* Vertical iPhone */
+/* change styles based on the device width */
 @media only screen and (max-device-width: 480px){
     :root {
         --header-size: 210px;
@@ -205,6 +235,7 @@ legend {
     body{
         font-size: 200%;
     }
+    /* switch flex direction to stack instead elements having them of beside each other*/
     .navbar {
         flex-direction: column;
         text-align: center

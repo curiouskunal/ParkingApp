@@ -19,8 +19,11 @@
     <meta property="og:image" content="resources/images/parking-lot.jpg">
 
     <link href="resources/style/normalize.css" rel="stylesheet" type="text/css">
+    <!-- Global CSS for common style -->
     <link href="resources/style/main.css" rel="stylesheet" type="text/css">
+    <!-- File specific CSS for-->
     <link href="resources/style/index.css" rel="stylesheet" type="text/css">
+    <!-- import Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
 </head>
@@ -28,9 +31,11 @@
 <body>
     <header>
         <div class="navbar">
-            <h1><i class="fas fa-parking"></i>arking App</h1>
+            <!-- Parking App nav name, using font awsome for 'P' icon -->
+            <h1 title="Parking App"><i class="fas fa-parking"></i>arking App</h1>
             <nav>
                 <ul class="nav">
+                    <!-- current indicates the active Nav menu item -->
                     <li><a class="current" href="index.html"><div>Home</div></a></li>
                     <li><a href="search.html">Search</a></li>
                     <li><a href="submission.html">Submit</a></li>
@@ -40,9 +45,12 @@
         </div>
     </header>
 
+    <!-- Page wrap my div contains all the content of the page. Eesentially containing the body content-->
     <div class=page-wrap>
+        <!-- horizontal wrapper section has flex-box styling to horizontal center -->
         <div class="horizontal-wrapper">
             <div id="login">
+                <!-- Form element for login, It will go to search.html page when you click submit -->
                 <form id="loginForm" action="search.html">
                     <fieldset>
                         <legend>Login</legend>
@@ -50,6 +58,7 @@
                         <input id="login-email" type="email" name="email" required><br>
                         <label for="login-password">Password:</label>
                         <input id="login-password" type="password" name="password" required><br>
+                        <!-- using this div to center the submit button -->
                         <div class="center">
                             <input class="submit-button" type="submit" value="Login">
                         </div>
@@ -57,7 +66,9 @@
                 </form>
                 <div id="register">
                     <p>Don't Have an account?</p>
+                    <!-- using this div to center the submit button -->
                     <div class="center">
+                        <!-- using an 'a' element because If I used <button> you can not re-direct to another page without javascript-->
                         <a href="register.html"> Sign Up</a>
                     </div>
                 </div>
