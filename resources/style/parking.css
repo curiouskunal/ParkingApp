@@ -50,7 +50,7 @@
       background-color: white;
   }
 
-  .test{
+  .width{
     width: 50%;
   }
   
@@ -96,7 +96,7 @@
         width: 100%;
     }
 
-    .test{
+    .width{
         width: 100%;
       }
 
@@ -132,7 +132,7 @@
         width: 70%;
     }
 
-    .test{
+    .width{
         width: 100%;
       }
 }
