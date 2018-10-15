@@ -1,17 +1,17 @@
 :root {
     --header-size: 80px;
     --footer-size: 30px;
-  }
+}
 
 
 html {
-  font: normal 100%/1.5 Georgia,serif;
-  height: 100%;
+    font: normal 100%/1.5 Georgia,serif;
+    height: 100%;
 }
 
 body {
-  margin: 0;
-  height: 100%;
+    margin: 0;
+    height: 100%;
 }
 
 header {
