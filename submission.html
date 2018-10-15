@@ -18,25 +18,25 @@
 
 </head>
 
-<header>
-    <div class="container navbar">
-        <h1><i class="fas fa-parking"></i>arking App</h1>
-        <nav>
-            <ul class="nav">
-                <li><a href="index.html"><div>Home</div></a></li>
-                <li><a href="search.html">Search</a></li>
-                <li><a class="current" href="submission.html">Submit</a></li>
-                <li><a href="profile.html">My Profile</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
 <body>
+    <header>
+        <div class="container navbar">
+            <h1><i class="fas fa-parking"></i>arking App</h1>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html"><div>Home</div></a></li>
+                    <li><a href="search.html">Search</a></li>
+                    <li><a class="current" href="submission.html">Submit</a></li>
+                    <li><a href="profile.html">My Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div class=page-wrap>
         <div class="horizontal-wrapper">
                 <div id="login">
-                    <form action="" id="ParkingSubmition">
+                    <form id="ParkingSubmition">
                         <fieldset>
                             <legend>Register Parking Spot</legend>
                             <label for="ParkingSpotName">Parking Spot Name:</label> 
@@ -47,9 +47,9 @@
                             <input id="ParkingSpotLocationLog" type="number" name="longitude" placeholder="longitude" >
                             <input id="ParkingSpotLocationLat" type="number" name="latitude" placeholder="latitude" > <br>
                             <label for="ParkingSpotUpload">Upload Photos or Video:</label>
-                            <input id="ParkingSpotUpload"type="file" name="myFile"> <br><br>
+                            <input id="ParkingSpotUpload" type="file" name="myFile"> <br><br>
                             <div class="center">
-                                    <input class="submit-button"type="submit" value="Submit">
+                                    <input class="submit-button" type="submit" value="Submit">
                             </div>
                         </fieldset>
                     </form>
@@ -57,8 +57,9 @@
             </div>
         </div>
     </div>
-</body>
-<footer>
+
+    <footer>
         Kunal Shah • shahk24
-</footer>
+    </footer>
+</body>
 </html>
