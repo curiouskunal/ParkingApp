@@ -86,7 +86,8 @@ footer{
 }
 
 .nav .current {
-    border-color: #9B9B9B;
+    border-color: white;
+    border-width: 3px;
 }
 
 input {

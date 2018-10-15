@@ -1,0 +1,23 @@
+textarea{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 12px 0;
+    box-sizing: border-box;
+    border: 1px solid grey;
+}
+
+textarea:focus {
+    border: 2px solid lightblue;
+}
+
+#ParkingSpotLocationLog , #ParkingSpotLocationLat {
+    width: 25%;
+}
+
+input[type="file"] {
+    border: 1px solid transparent;
+}
+
+input[type="file"]:focus {
+    background-color: transparent;
+}   

@@ -1,0 +1,101 @@
+.right{
+    width: 30%;
+    background-color: grey; 
+    text-align: center;
+}
+
+.left{
+    width: 70%;
+}
+
+.profile_photo{
+    width: 80%;
+    margin: 10%;
+    margin-bottom: 0;
+}
+
+h2{
+    margin: 0;
+}
+
+h3{
+    margin: 0;
+    font-weight: 300;
+}
+
+button{
+    margin: 10px;
+}
+
+.profileTables th , .profileTables td{
+    width: 300px;
+    border: 1px solid black;
+}
+
+.requestTable{
+    border-collapse: collapse;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: rgb(219, 219, 219)
+}
+tr:nth-child(odd) {
+    background: #FFF
+}
+
+.requests{
+    margin: 5% 2%;
+}
+
+/* horizontal iPhone  */
+@media only screen and (max-device-width: 788px){
+    .horizontal-wrapper{
+        flex-direction: column;
+    }
+
+    .profile_photo{
+        width: 50%;
+        margin: 0%;
+    }
+
+    .right{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        order: 1;
+    }
+    
+    .left{
+        width: 100%;
+        order: 2;
+    }
+
+    .mobileLeft{
+        width: 50%;
+    }
+
+    .mobileRight{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* Vertical iPhone */
+@media only screen and (max-device-width: 480px){
+    .horizontal-wrapper{
+        flex-direction: column;
+    }
+
+    .right{
+        width: 100%;
+        order: 1;
+    }
+    
+    .left{
+        width: 100%;
+        order: 2;
+    }
+}

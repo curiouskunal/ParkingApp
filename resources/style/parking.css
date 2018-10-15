@@ -1,4 +1,5 @@
 .results a, .right a {
+    width: 70%;
     color: #fff;
     display: inline-block;
     padding: 0.5em 0.75em;
@@ -8,26 +9,38 @@
   }
   
   .results a:hover , .right a:hover {
-    background-color: #000;
+    background-color: #970909;
   }
   
   .results .current , .right .current {
-    background-color: red;
+    background-color: #EA4335;
+  }
+
+  .horizontal-wrapper{
+      overflow: hidden;
   }
   
+  #map{
+    vertical-align: middle;
+    min-height: 100%;
+    min-width: 100%;
+
+  }
+  #ParkingSpot{
+      width: 100%;
+  }
   
   #spot{
       width: 300px;
   }
   
   .left{
-      width: 50%;
-      background-color: #eee;
+      width: 75%;
       text-align: center;
   }
   
   .right {
-      width: 50%;
+      width: 25%;
       background-color: #ddd;
       text-align: center;
   }
@@ -35,6 +48,10 @@
   table{
       width: 100%;
       background-color: white;
+  }
+
+  .test{
+    width: 50%;
   }
   
   .reviews th{
@@ -54,4 +71,68 @@
   .reviewProfileImage{
       vertical-align: middle;
   }
+
+  .stars{
+      float: right;
+  }
   
+
+  /* horizontal iPhone  */
+@media only screen and (max-device-width: 1040px){
+
+    .horizontal-wrapper{
+        flex-direction: column;
+    }
+
+    .left{
+        width: 100%;
+    }
+    
+    .right {
+        width: 100%;
+    }
+
+    .reviews th{
+        width: 100%;
+    }
+
+    .test{
+        width: 100%;
+      }
+
+      #ParkingSpot{
+          width: 50%;
+      }
+
+      #map{
+        max-width: 100%;
+      }
+}
+
+/* Vertical iPhone */
+@media only screen and (max-device-width: 480px){
+    
+    .horizontal-wrapper{
+        flex-direction: column;
+    }
+
+    .left{
+        width: 100%;
+    }
+  
+    .right {
+        width: 100%;
+    }
+    #map{
+        max-width: 100%;
+      }
+
+
+      #ParkingSpot{
+        width: 70%;
+    }
+
+    .test{
+        width: 100%;
+      }
+}

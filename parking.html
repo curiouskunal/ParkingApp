@@ -11,117 +11,140 @@
     <link href="resources/style/normalize.css" rel="stylesheet" type="text/css">
     <link href="resources/style/main.css" rel="stylesheet" type="text/css">
     <link href="resources/style/parking.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
 </head>
 
 <header>
-    <div class="container navbar">
-        <h1>Parking App</h1>
-        <nav>
-            <ul class="nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="search.html">Search</a></li>
-                <li><a href="index.html">Logout</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+        <div class="navbar">
+            <h1><i class="fas fa-parking"></i>arking App</h1>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html"><div>Home</div></a></li>
+                    <li><a href="search.html">Search</a></li>
+                    <li><a href="submission.html">Submit</a></li>
+                    <li><a href="profile.html">My Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <body>
+        <div class=page-wrap>
+            
+            <div class="horizontal-wrapper">
+                <div class="center">
+                    <h1> McMaster University, lot M, Hamilton, ON L8N 1E9 </h1>
+                </div>
+            </div>
 
-<body>
+            <div class="horizontal-wrapper">
+                <div class="left">
+                    <img id="map" src="resources/images/parking-spot_map.png" alt="Parking Location Map">
+                </div>
 
 
-    <div class=container>
-        <div class="left">
-                <h1> McMaster University, lot M, Hamilton, ON L8N 1E9 </h1>
-            <img src="resources/images/parking-spot.jpg" alt="Parking spot" width="300px">
-            <div class="reviews">
-                <table>
-                    <tr>
-                        <td>
-                            <div>
-                              <img class="reviewProfileImage" src="https://placehold.it/40x40">
-                              <span>Kunal Shah</span>
-                              <span class="stars">
-                                  ★★★☆☆
-                              </span>
-                            </div>
-                            <p>
-                                The review goes here
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div>
-                              <img class="reviewProfileImage" src="https://placehold.it/40x40">
-                              <span>Kunal Shah</span>
-                              <span class="stars">
-                                  ★★★☆☆
-                              </span>
-                            </div>
-                            <p>
-                                The review goes here
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div>
-                              <img class="reviewProfileImage" src="https://placehold.it/40x40">
-                              <span>Kunal Shah</span>
-                              <span class="stars">
-                                  ★★★☆☆
-                              </span>
-                            </div>
-                            <p>
-                                The review goes here
-                            </p>
-                        </td>
-                    </tr>
-                </table>
+                <div class="right">
+                    <img id="ParkingSpot" src="resources/images/parking-spot.jpg" alt="Parking spot">
+                    <table>
+                        <tr>
+                            <th>
+                                Name:
+                            </th>
+                            <th>
+                                Lot M - Spot 1A
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                Location:
+                            </th>
+                            <th>
+                                McMaster
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                Price:
+                            </th>
+                            <th>
+                                $300/day
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                Distance:
+                            </th>
+                            <th>
+                                0.5 KM
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                Location:
+                            </th>
+                            <th>
+                                43.260891 , -79.918783
+                            </th>
+                        </tr>
+                    </table>
+                    <a class="current" href="#"> Reserve now </a>
+                </div>
+
+            </div>
+
+            <div class="horizontal-wrapper">
+                <div class="center test">
+                    <div class="reviews">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div>
+                                    <img class="reviewProfileImage" src="resources/images/profile_small.png">
+                                    <span>Kunal Shah</span>
+                                    <span class="stars">
+                                        ★★★☆☆
+                                    </span>
+                                    </div>
+                                    <p>
+                                        The review goes here
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                    <img class="reviewProfileImage" src="resources/images/profile_small.png">
+                                    <span>Kunal Shah</span>
+                                    <span class="stars">
+                                        ★★★☆☆
+                                    </span>
+                                    </div>
+                                    <p>
+                                        The review goes here
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                    <img class="reviewProfileImage" src="resources/images/profile_small.png">
+                                    <span>Kunal Shah</span>
+                                    <span class="stars">
+                                        ★★★☆☆
+                                    </span>
+                                    </div>
+                                    <p>
+                                        The review goes here
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="right">
-            <a class="current" href="#"> Reserve now </a>
-            <br />
-            <img src="resources/images/parking-spot_map.png" alt="Parking spot" width="400px">
-            <table>
-                <tr>
-                    <th>
-                        Location:
-                    </th>
-                    <th>
-                        McMaster Lot M
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        Price:
-                    </th>
-                    <th>
-                        $300/day
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        Distance:
-                    </th>
-                    <th>
-                        0.5 KM
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        Location:
-                    </th>
-                    <th>
-                        43.260891 , -79.918783
-                    </th>
-                </tr>
-            </table>
-        </div>
-
     </div>
-
 
 </body>
 </html>

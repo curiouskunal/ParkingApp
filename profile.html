@@ -1,6 +1,153 @@
-Logout
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <title> Parking App </title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Kunal Shah" />
+    <meta name="description" content="Kunal's Parking App Assignment for COMPSCI 4WW3" />
+    <meta name="keywords" content="assignemnt, parking, 4ww3" />
+    <meta name="robots" content="noindex" />
 
-Edit user detials
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/icons/favicon-16x16.png">
 
-Incoming Requests
-Outgoing Requests
+
+    <link href="resources/style/normalize.css" rel="stylesheet" type="text/css">
+    <link href="resources/style/main.css" rel="stylesheet" type="text/css">
+    <link href="resources/style/profile.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+</head>
+
+<header>
+    <div class="container navbar">
+        <h1><i class="fas fa-parking"></i>arking App</h1>
+        <nav>
+            <ul class="nav">
+                <li><a href="index.html"><div>Home</div></a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="submission.html">Submit</a></li>
+                <li><a class="current" href="profile.html">My Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <div class=page-wrap>
+        <div class="horizontal-wrapper">
+                <div class="left">
+                    <div class="requests">
+                        <h2>Incoming Requests</h2>
+
+                        <div id="incoming" class="profileTables">
+                                <table class="requestTable">
+                                    <tr>
+                                        <th>Client</th>
+                                        <th>Spot</th>
+                                        <th>Price</th>
+                                        <th>Date</th>
+                                        <th>Duration</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Dr. Mostafa Milan</td>
+                                        <td>Driveway</td>
+                                        <td>$5</td>
+                                        <td>October 14</td>
+                                        <td>Full Day</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dr. Mostafa Milan</td>
+                                        <td>Driveway</td>
+                                        <td>$5</td>
+                                        <td>October 14</td>
+                                        <td>Full Day</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dr. Mostafa Milan</td>
+                                        <td>Driveway</td>
+                                        <td>$5</td>
+                                        <td>October 14</td>
+                                        <td>Full Day</td>
+                                    </tr>
+                                </table>
+                        </div>
+                    </div>
+                    <div class="requests">
+                        <h2>Outgoing Requests</h2>
+                        <div id="outgoing" class="profileTables">
+                            <table class="requestTable">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Spot</th>
+                                    <th>Price</th>
+                                    <th>Duration</th>
+                                    <th>Location</th>
+                                </tr>
+                                <tr>
+                                    <td>October 14</td>
+                                    <td>Lot M - Spot 1A</td>
+                                    <td>$30</td>
+                                    <td>Full Day</td>
+                                    <td>McMaster University, lot M, Hamilton, ON L8N 1E9</td>
+                                </tr>
+                                <tr>
+                                    <td>October 14</td>
+                                    <td>Lot M - Spot 1A</td>
+                                    <td>$30</td>
+                                    <td>Full Day</td>
+                                    <td>McMaster University, lot M, Hamilton, ON L8N 1E9</td>
+                                </tr>
+                                <tr>
+                                    <td>October 14</td>
+                                    <td>Lot M - Spot 1A</td>
+                                    <td>$30</td>
+                                    <td>Full Day</td>
+                                    <td>McMaster University, lot M, Hamilton, ON L8N 1E9</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="requests"> 
+                        <h2>My Spots</h2>
+                        <div id="outgoing" class="profileTables">
+                            <table class="requestTable">
+                                <tr>
+                                    <th>Spot</th>
+                                    <th>Price</th>
+                                    <th>Availability</th>
+                                    <th>Location</th>
+                                </tr>
+                                <tr>
+                                    <td>Driveway</td>
+                                    <td>$5 / day</td>
+                                    <td>9-5 Weekedays</td>
+                                    <td>1 University St, Hamilton ON</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=right>
+                    <div class="mobileLeft">
+                        <img class="profile_photo" src="resources/images/profile_large.png">
+                    </div>
+                    <div class="mobileRight">
+                        <div>
+                            <h2> Kunal Shah </h2>
+                            <h3> email@example.com </h3>
+                            <button class="submit-button">Logout</button>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</body>
+
+<footer>
+        Kunal Shah • shahk24
+</footer>
+</html>

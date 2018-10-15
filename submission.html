@@ -8,45 +8,57 @@
     <meta name="keywords" content="assignemnt, parking, 4ww3" />
     <meta name="robots" content="noindex" />
 
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/icons/favicon-16x16.png">
+
     <link href="resources/style/normalize.css" rel="stylesheet" type="text/css">
     <link href="resources/style/main.css" rel="stylesheet" type="text/css">
     <link href="resources/style/submission.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
 </head>
 
 <header>
     <div class="container navbar">
-        <h1>Parking App</h1>
+        <h1><i class="fas fa-parking"></i>arking App</h1>
         <nav>
             <ul class="nav">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html"><div>Home</div></a></li>
                 <li><a href="search.html">Search</a></li>
-                <li><a href="index.html">Logout</a></li>
+                <li><a class="current" href="submission.html">Submit</a></li>
+                <li><a href="profile.html">My Profile</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
 <body>
-    <div >
-        <form action="" id="ParkingSubmition">
-            <fieldset>
-                <legend>Register Parking Spot</legend>
-                Parking Spot Name:<br>
-                <input type="text" name="firstname" placeholder="first" >
-                <br>
-                Discription:<br>
-                <textarea rows="4" cols="50" name="comment" form="usrform"></textarea>
-                <br>
-                Location:<br>
-                <input type="number" name="firstname" placeholder="43.260891" >
-                <input type="number" name="firstname" placeholder="-79.918783" >
-                <br>
-                upload Photos or Video: <br>
-                <input type="file" name="myFile">
-                <br><br>
-                <input type="submit" value="Submit">
-            </fieldset>
-        </form>
+    <div class=page-wrap>
+        <div class="horizontal-wrapper">
+                <div id="login">
+                    <form action="" id="ParkingSubmition">
+                        <fieldset>
+                            <legend>Register Parking Spot</legend>
+                            <label for="ParkingSpotName">Parking Spot Name:</label> 
+                            <input id="ParkingSpotName" type="text" name="Name" placeholder="Lot , Spot Number"><br><br>
+                            <label for="ParkingSpotDiscription">Discription:</label>
+                            <textarea id="ParkingSpotDiscription" rows="4" cols="50" name="Discription" form="ParkingSubmition" placeholder="Discription"></textarea><br>
+                            <label for="ParkingSpotLocationLog">Location:</label>
+                            <input id="ParkingSpotLocationLog" type="number" name="longitude" placeholder="longitude" >
+                            <input id="ParkingSpotLocationLat" type="number" name="latitude" placeholder="latitude" > <br>
+                            <label for="ParkingSpotUpload">Upload Photos or Video:</label>
+                            <input id="ParkingSpotUpload"type="file" name="myFile"> <br><br>
+                            <div class="center">
+                                    <input class="submit-button"type="submit" value="Submit">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
+<footer>
+        Kunal Shah • shahk24
+</footer>
 </html>

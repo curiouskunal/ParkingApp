@@ -44,10 +44,18 @@ tr:nth-child(odd) {
     flex-direction: row;
 }
 
+img {
+    width: 50%;
+    height: auto;
+}
+
 /* horizontal iPhone  */
 @media only screen and (max-device-width: 1040px){
     #ParkingSearch_flex{
         flex-direction: column;
+    }
+    img {
+        width: 75%;
     }
 
 }
@@ -62,6 +70,9 @@ tr:nth-child(odd) {
     }
     #Dis_rating_flex{
         flex-direction: column;
+    }
+    img {
+        width: 100%;
     }
 
 }
