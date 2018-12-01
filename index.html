@@ -26,6 +26,8 @@
     <!-- import Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
+    <script src="resources/script.js"></script>
+
 </head>
 
 <body>
@@ -51,13 +53,13 @@
         <div class="horizontal-wrapper">
             <div id="login">
                 <!-- Form element for login, It will go to search.html page when you click submit -->
-                <form id="loginForm" action="search.html">
+                <form id="loginForm" action="search.html" onsubmit="return validateLoginForm(this)">
                     <fieldset>
                         <legend>Login</legend>
-                        <label for="login-email">Email:</label> 
-                        <input id="login-email" type="email" name="email" required><br>
+                        <label for="login-email">Email:</label>
+                        <input id="login-email" type="email" name="email"><br>
                         <label for="login-password">Password:</label>
-                        <input id="login-password" type="password" name="password" required><br>
+                        <input id="login-password" type="password" name="password"><br>
                         <!-- using this div to center the submit button -->
                         <div class="center">
                             <input class="submit-button" type="submit" value="Login">

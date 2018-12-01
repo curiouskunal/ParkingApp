@@ -16,6 +16,13 @@
     <link href="resources/style/results.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+  integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+  crossorigin=""></script>
+
 </head>
 
 <body>
@@ -35,28 +42,28 @@
 
     <div class=page-wrap>
         <div class="horizontal-wrapper">
-            <form action="results.html" id="ParkingSearch">
+            <form action="results.html" id="ParkingSearch" onsubmit="return validateSearchBarForm(this)">
                 <fieldset>
                     <!-- legend for accessibility suport -->
                     <legend>Search Results</legend>
                     <div id="ParkingSearch_flex">
                         <div id="Price_flex">
                             <div>
-                                <label for="search-min-price">Minimum Price:</label> 
+                                <label for="search-min-price">Minimum Price:</label>
                                 <input id="search-min-price" type="number" name="MinPrice" min="0">
                             </div>
-                            <div> 
-                                <label for="search-max-price">Maximum Price:</label> 
+                            <div>
+                                <label for="search-max-price">Maximum Price:</label>
                                 <input id="search-max-price" type="number" name="MaxPrice" min="0">
                             </div>
                         </div>
                         <div id="Dis_rating_flex">
                             <div>
-                                <label for="search-distance">Distance:</label> 
+                                <label for="search-distance">Distance:</label>
                                 <input id="search-distance" type="number" name="distance" min="0">
                             </div>
                             <div>
-                                <label for="search-min-rating">Rating:</label> 
+                                <label for="search-min-rating">Rating:</label>
                                 <!-- select is used for a dropdown to select the min and max rating system-->
                                 <select id="search-min-rating" name="MinRating">
                                     <option value="1" selected="selected">1</option>
@@ -84,7 +91,8 @@
         </div>
 
         <div class="center">
-            <img src="resources/images/Large_parking-spot_map.png" alt="Parking Map">
+            <!-- <img src="resources/images/Large_parking-spot_map.png" alt="Parking Map"> -->
+            <div id="mapid"></div>
         </div>
 
         <div class="horizontal-wrapper">
@@ -126,5 +134,8 @@
     <footer>
         Kunal Shah • shahk24
     </footer>
+
+    <script src="resources/script.js"></script>
+
 </body>
 </html>

@@ -36,10 +36,10 @@
     <div class=page-wrap>
         <div class="horizontal-wrapper">
             <div id="login">
-                <form id="ParkingSubmition">
+                <form id="ParkingSubmition" onsubmit="return validateSubmission(this)">
                     <fieldset>
                         <legend>Register Parking Spot</legend>
-                        <label for="ParkingSpotName">Parking Spot Name:</label> 
+                        <label for="ParkingSpotName">Parking Spot Name:</label>
                         <input id="ParkingSpotName" type="text" name="Name" placeholder="Lot , Spot Number"><br><br>
                         <label for="ParkingSpotDiscription">Discription:</label>
                         <textarea id="ParkingSpotDiscription" rows="4" cols="50" name="Discription" form="ParkingSubmition" placeholder="Discription"></textarea><br>
@@ -60,5 +60,6 @@
     <footer>
         Kunal Shah • shahk24
     </footer>
+    <script src="resources/script.js"></script>
 </body>
 </html>

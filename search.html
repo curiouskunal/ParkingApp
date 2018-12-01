@@ -32,23 +32,25 @@
             </nav>
         </div>
     </header>
-    
+
     <div class=page-wrap>
         <div class="horizontal-wrapper">
             <div id="login">
-                <form action="results.html" id="ParkingSubmition">
+                <form action="results.html" id="ParkingSubmition" onsubmit="return validateSearchForm(this)">
                     <fieldset>
                         <legend>Search</legend>
-                        <label for="search-min-price">Minimum Price:</label> 
+                        <label for="search-min-price">Minimum Price:</label>
                         <input id="search-min-price" type="number" name="MinPrice" min="0"><br>
-                        <label for="search-max-price">Maximum Price:</label> 
+                        <label for="search-max-price">Maximum Price:</label>
                         <input id="search-max-price" type="number" name="MaxPrice" min="0"><br>
-                        <label for="search-location">Current Location:</label> 
-                        <input id="search-location" type="text" name="address" placeholder="Your Current Address"><br>
-                        <label for="search-distance">Distance:</label> 
+                        <label for="search-location">Current Location:</label>
+                        <input id="search-location" type="text" name="address" placeholder="Your current address or [Latitude,Longitude]">
+                        <a onClick="getLocation()"><i class="fas fa-map-marked-alt"></i></a>
+                        <br>
+                        <label for="search-distance">Distance:</label>
                         <input id="search-distance" type="number" name="distance" min="0"><br>
                         <div class=rating>
-                        <label for="search-min-rating">Rating:</label> 
+                        <label for="search-min-rating">Rating:</label>
                             <select id="search-min-rating" name="MinRating">
                                 <option value="1" selected="selected">1</option>
                                 <option value="2">2</option>
@@ -77,5 +79,7 @@
     <footer>
         Kunal Shah • shahk24
     </footer>
+
+    <script src="resources/script.js"></script>
 </body>
 </html>

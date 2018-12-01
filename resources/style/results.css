@@ -49,6 +49,10 @@ img {
     height: auto;
 }
 
+#mapid {
+    height: 300px;
+}
+
 /* horizontal iPhone  */
 @media only screen and (max-device-width: 1040px){
     #ParkingSearch_flex{
