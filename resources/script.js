@@ -6,31 +6,31 @@ const validNumRegex = /^[0-9]*$/;
 // Latitude/Longitude can be negative with "number dot number"
 const validLongLatRegex = /(-|)\d*\.\d*/;
 
-// map location is set when the page is loaded.
-// saved to global variable mymap
-var mymap = L.map('mapid').setView([43.257931,-79.917068], 15);
+// Hedder Current page dynamically
+currentPage = window.location.pathname;
 
-// adding the maps api key to mymap , copied from Mapbox
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic2hhaGsyNCIsImEiOiJjam9kOGl3cm8wdG8xM3BvMTNtcWpyOG91In0.ryfTnBF5J8RAoWrTcSZS8A', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox.streets',
-    accessToken: 'your.mapbox.access.token'
-}).addTo(mymap);
-
-// setting and adding the dummy data marker to mymap
-var marker = L.marker([43.257931,-79.917068]).addTo(mymap);
-
-// setting and adding the distance radias of the dummy data point to mymap, with radius 500 m
-var circle = L.circle([43.257931,-79.917068], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.1,
-    radius: 500
-}).addTo(mymap);
-
-// setting and adding marker title to mymap
-marker.bindPopup("<b>Parking Spot A</b>").openPopup();
+switch (currentPage) {
+    case "/":
+        document.getElementById("index.html").classList.add("current");
+        break;
+    case "/index.php":
+        document.getElementById("index.html").classList.add("current");
+        break;
+    case "/profile.php":
+        document.getElementById("profile.html").classList.add("current");
+        break;
+    case "/search.php":
+        document.getElementById("search.html").classList.add("current");
+        break;
+    case "/submission.php":
+        document.getElementById("submission.html").classList.add("current");
+        break;
+    default:
+        document.getElementById("index.html").classList.remove("current");
+        document.getElementById("profile.html").classList.remove("current");
+        document.getElementById("search.html").classList.remove("current");
+        document.getElementById("submission.html").classList.remove("current");
+}
 
 // function that will run when you submit login form
 function validateLoginForm(form) {
@@ -159,8 +159,8 @@ function validateSearchForm(form) {
         return false;
     }
 
-    // if there are more than 2 or 0 inputs for address, we only want 1 or 2
-    if (location.length > 2 || location.length == 0){
+    // if there are more than 2 or 0 inputs for address, we only want exactly 2
+    if (location.length > 2 || location.length < 2 ){
         alert("Please enter address or latitude longitude coordinates");
         return false;
     }
@@ -200,7 +200,7 @@ function getLocation() {
         alert("Geolocation is not supported by this browser.");
     }
 }
-// fill the location in the address bar - from https://www.w3schools.com/html/html5_geolocation.asp
+// fill the location in the location input - from https://www.w3schools.com/html/html5_geolocation.asp
 function showPosition(position) {
     document.getElementById("search-location").value = position.coords.latitude + "," + position.coords.longitude;
 }
@@ -273,6 +273,8 @@ function validateSubmission(form) {
     var name = form.Name.value;
     // get the discription from from
     var discription = form.Discription.value;
+    // get the price from from
+    var price = form.Price.value;
     // get the long from from
     var long = form.longitude.value;
     // get the lat from from
@@ -288,6 +290,15 @@ function validateSubmission(form) {
     if (!discription){
         alert("Please enter a discription");
         return false;
+    }
+
+    // if there is no discription value
+    if (!price){
+        alert("Please enter a price");
+        return false;
+    }
+    else if(price < 0){
+        alert("Please enter a positive value for price");
     }
 
     // if there is no latatude value
