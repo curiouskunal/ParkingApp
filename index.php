@@ -1,6 +1,6 @@
 <?php
-// $PageTitle="New Page Title";
-
+session_start();
+$_SESSION["uid"] = 1;
 function customPageStyle(){?>
     <!-- File specific CSS for-->
     <link href="resources/style/index.css" rel="stylesheet" type="text/css">

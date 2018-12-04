@@ -38,6 +38,23 @@ if( isset( $_POST["submit"] ) ){
     $stmt->bindValue(':photo', $photo);
     $stmt->bindValue(':price', $price);
     $stmt->execute();
+    $pid = $pdo->lastInsertId();
+}elseif( isset( $_POST["reviewSubmit"] ) ){
+    $pid= $_GET['parking'];
+
+    $pdo = new PDO('mysql:host=localhost;dbname=parkingapp', 'web', '4ww3');
+
+    $uid = $_SESSION["uid"]
+    $review = $_POST["review"];
+    $rating = $_POST["rating"];
+
+    $sql = 'INSERT INTO reviews(uid, pid, rating, review) VALUES(:uid, :pid, :rating, :review)';
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':uid', $uid);
+    $stmt->bindValue(':pid', $pid);
+    $stmt->bindValue(':rating', $review);
+    $stmt->bindValue(':review', $rating);
+    $stmt->execute();
 }else{
 
     $pid= $_GET['parking'];
@@ -120,6 +137,25 @@ if( isset( $_POST["submit"] ) ){
     <div class="horizontal-wrapper">
         <div class="center width">
             <div class="reviews">
+
+                <div id="submitReview">
+                    <form id="reviewform" action="parking.php?parking=<?=$pid?>" method="post" onsubmit="return validateReview(this)">
+                        <fieldset>
+                            <textarea id="ParkingSpotDiscription" rows="4" cols="50" name="review" form="reviewform" placeholder="Enter Your review here"></textarea><br>
+                            <div class=rating>
+                            <label for="review-rating">Rating:</label>
+                                <select id="review-rating" name="rating">
+                                    <option value="1" selected="selected">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            <input class="submit-button" type="submit" value="Submit" name="reviewSubmit">
+                        </fieldset>
+                    </form>
+                </div>
+
                 <table>
 <!--                     <tr>
                         <td>
@@ -135,26 +171,35 @@ if( isset( $_POST["submit"] ) ){
                     </tr> -->
 
                     <?php
-                        try {
-                            $pdo = new PDO('mysql:host=localhost;dbname=parkingapp', 'web', '4ww3');
-                            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                            $result = $pdo->query("SELECT * FROM reviews where pid = $pid");
+                        if(!!$pid){
+                            try {
+                                $pdo = new PDO('mysql:host=localhost;dbname=parkingapp', 'web', '4ww3');
+                                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                $result = $pdo->query("SELECT * FROM reviews where pid = $pid");
 
-                            foreach ($result as $ROW) {
-                                $reviewer_uid = $ROW['uid'];
-                                $reviewer = $pdo->query("SELECT * FROM users WHERE uid = $reviewer_uid");
-                                $reviewer_name = $reviewer->fetchAll()[0]['name'];
-                                echo '<tr><td><div>';
-                                echo '<img class="reviewProfileImage" src="resources/images/profile_small.png" alt="Reviewer Profile Photo">';
-                                echo '<span>',$reviewer_name,'</span>';
-                                echo '<span class="stars">',$ROW['rating'],'/5</span>';
-                                echo '</div><p>',$ROW['review'],'</p></td></tr>';
+                                if ($result->rowCount()>0){
+                                    foreach ($result as $ROW) {
+                                        $reviewer_uid = $ROW['uid'];
+                                        $reviewer = $pdo->query("SELECT * FROM users WHERE uid = $reviewer_uid");
+                                        $reviewer_name = $reviewer->fetchAll()[0]['name'];
+                                        echo '<tr><td><div>';
+                                        echo '<img class="reviewProfileImage" src="resources/images/profile_small.png" alt="Reviewer Profile Photo">';
+                                        echo '<span>',$reviewer_name,'</span>';
+                                        echo '<span class="stars">',$ROW['rating'],'/5</span>';
+                                        echo '</div><p>',$ROW['review'],'</p></td></tr>';
+                                    }
+                                }else{
+                                    echo '<tr><td><p class="center"> No Reviews </p></td></tr>';
+                                }
+
                             }
+                            catch (PDOException $e) {
+                                echo $e->getMessage();
+                            }
+                        }else{
+                            echo '<tr><td><p class="center"> No Reviews </p></td></tr>';
+                        }
 
-                        }
-                        catch (PDOException $e) {
-                            echo $e->getMessage();
-                        }
                     ?>
 
                 </table>
