@@ -1,6 +1,9 @@
 <?php
 session_start();
-$_SESSION["uid"] = 1;
+include 'helper.php';
+
+$_SESSION['loggedIn'] = 'false';
+
 function customPageStyle(){?>
     <!-- File specific CSS for-->
     <link href="resources/style/index.css" rel="stylesheet" type="text/css">
@@ -8,8 +11,39 @@ function customPageStyle(){?>
 
 include('html_head.php');
 
-$current="index";
 include('header.php');
+
+
+if( isset( $_POST["login"] ) ){
+
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    try {
+        $pdo = new PDO('mysql:host=localhost;dbname=parkingapp', 'web', '4ww3');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $result = $pdo->query("SELECT * FROM users WHERE email = '$email' AND password = '$password'");
+
+        if ($result->rowCount() > 0) {
+            foreach ($result as $ROW) {
+                $_SESSION["uid"] = $ROW['uid'];
+                $_SESSION["name"] = $ROW['name'];
+                $_SESSION['loggedIn'] = 'true';
+                // echo '<script>alert(',$_SESSION["uid"],');</script>';
+
+            }
+            header("Location: search.php");
+        } else {
+            $_SESSION['loggedIn'] = 'false';
+            showError("Email or Password is incorrect");
+        }
+
+    }
+    catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+
+}
 ?>
 
 <!-- Page wrap my div contains all the content of the page. Eesentially containing the body content-->
@@ -18,7 +52,7 @@ include('header.php');
     <div class="horizontal-wrapper">
         <div id="login">
             <!-- Form element for login, It will go to search.php page when you click submit -->
-            <form id="loginForm" action="search.php" onsubmit="return validateLoginForm(this)">
+            <form id="loginForm" action="<?php echo $PHP_SELF;?>" method="post" onsubmit="return validateLoginForm(this)">
                 <fieldset>
                     <legend>Login</legend>
                     <label for="login-email">Email:</label>
@@ -27,7 +61,7 @@ include('header.php');
                     <input id="login-password" type="password" name="password"><br>
                     <!-- using this div to center the submit button -->
                     <div class="center">
-                        <input class="submit-button" type="submit" value="Login">
+                        <input class="submit-button" type="submit" name="login">
                     </div>
                 </fieldset>
             </form>

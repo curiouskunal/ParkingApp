@@ -38,3 +38,5 @@ INSERT INTO reviews (uid,pid,rating,review) VALUES ("1","1","5","good");
 
 
 select parkingspot.pid from parkingspot inner join reviews on parkingspot.pid = reviews.pid where name like '%%' and price between $MinPrice and $MaxPrice and 111.111 * DEGREES(ACOS(LEAST(COS(RADIANS(latitude)) * COS(RADIANS($current_latitude)) * COS(RADIANS(longitude - ($current_longitude))) + SIN(RADIANS(latitude)) * SIN(RADIANS(latitude)), 1.0))) < $maxDistance group by parkingspot.pid having avg(reviews.rating) between $MinRating and $MaxRating;
+
+select parkingspot.pid from parkingspot inner join reviews on parkingspot.pid = reviews.pid where name like '%%' and price between '1' and '1000' and 111.111 * DEGREES(ACOS(LEAST(COS(RADIANS(latitude)) * COS(RADIANS($current_latitude)) * COS(RADIANS(longitude - ($current_longitude))) + SIN(RADIANS(latitude)) * SIN(RADIANS(latitude)), 1.0))) < $maxDistance group by parkingspot.pid having avg(reviews.rating) between $MinRating and $MaxRating;

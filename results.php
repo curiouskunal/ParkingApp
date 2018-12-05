@@ -1,5 +1,6 @@
 <?php
-// $PageTitle="New Page Title";
+session_start();
+include 'helper.php';
 
 function customPageStyle(){?>
     <!-- File specific CSS for-->
@@ -12,6 +13,16 @@ $current="index";
 include('header.php');
 
 ini_set('display_errors', 1);
+
+
+$minPrice = $_GET["MinPrice"];
+$maxPrice = $_GET["MaxPrice"];
+$latitude = $_GET["Latitude"];
+$longitude = $_GET["Longitude"];
+$distance = $_GET["distance"];
+$minRating = $_GET["MinRating"];
+$maxRating = $_GET["MaxRating"];
+
 
 ?>
 

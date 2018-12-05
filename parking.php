@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 function customPageStyle(){?>
     <!-- File specific CSS for-->
     <link href="resources/style/parking.css" rel="stylesheet" type="text/css">
@@ -9,42 +9,69 @@ include('html_head.php');
 
 include('header.php');
 
+
 $name;
 $price;
 $discription;
 $longitude;
 $latitude;
 $pid;
+$uid = $_SESSION["uid"];
+
+function loadQuery() {
+
+    $GLOBALS['pid']= $_GET['parking'];
+
+    try {
+        $pdo = new PDO('mysql:host=localhost;dbname=parkingapp', 'web', '4ww3');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $result = $pdo->query("SELECT * FROM parkingspot WHERE pid= '$GLOBALS[pid]'");
+
+
+        foreach ($result as $ROW) {
+            $GLOBALS['name'] = $ROW['name'];
+            $GLOBALS['price'] = $ROW['price'];
+            $GLOBALS['discription'] = $ROW['discription'];
+            $GLOBALS['longitude'] = $ROW['longitude'];
+            $GLOBALS['latitude'] = $ROW['latitude'];
+        }
+
+    }
+    catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
 
 // ini_set('display_errors', 1);
-if( isset( $_POST["submit"] ) ){
-    $pdo = new PDO('mysql:host=localhost;dbname=parkingapp', 'web', '4ww3');
+// if( isset( $_POST["submit"] ) ){
+//     $pdo = new PDO('mysql:host=localhost;dbname=parkingapp', 'web', '4ww3');
+//
+//     $uid = "1";
+//     $name = $_POST["Name"];
+//     $price = $_POST["Price"];
+//     $discription = $_POST["Discription"];
+//     $longitude = $_POST["longitude"];
+//     $latitude = $_POST["latitude"];
+//     $photo = $_POST["myFile"];
+//
+//     $sql = 'INSERT INTO parkingspot(uid, name, discription, longitude, latitude, photo, price) VALUES(:uid, :name, :discription, :longitude, :latitude, :photo, :price)';
+//     $stmt = $pdo->prepare($sql);
+//     $stmt->bindValue(':uid', '1');
+//     $stmt->bindValue(':name', $name);
+//     $stmt->bindValue(':discription', $discription);
+//     $stmt->bindValue(':longitude', $longitude);
+//     $stmt->bindValue(':latitude', $latitude);
+//     $stmt->bindValue(':photo', $photo);
+//     $stmt->bindValue(':price', $price);
+//     $stmt->execute();
+//     $pid = $pdo->lastInsertId();
+// }elseif( isset( $_POST["reviewSubmit"] ) ){
+if( isset( $_POST["reviewSubmit"] ) ){
 
-    $uid = "1";
-    $name = $_POST["Name"];
-    $price = $_POST["Price"];
-    $discription = $_POST["Discription"];
-    $longitude = $_POST["longitude"];
-    $latitude = $_POST["latitude"];
-    $photo = $_POST["myFile"];
-
-    $sql = 'INSERT INTO parkingspot(uid, name, discription, longitude, latitude, photo, price) VALUES(:uid, :name, :discription, :longitude, :latitude, :photo, :price)';
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':uid', '1');
-    $stmt->bindValue(':name', $name);
-    $stmt->bindValue(':discription', $discription);
-    $stmt->bindValue(':longitude', $longitude);
-    $stmt->bindValue(':latitude', $latitude);
-    $stmt->bindValue(':photo', $photo);
-    $stmt->bindValue(':price', $price);
-    $stmt->execute();
-    $pid = $pdo->lastInsertId();
-}elseif( isset( $_POST["reviewSubmit"] ) ){
     $pid= $_GET['parking'];
 
     $pdo = new PDO('mysql:host=localhost;dbname=parkingapp', 'web', '4ww3');
 
-    $uid = $_SESSION["uid"]
     $review = $_POST["review"];
     $rating = $_POST["rating"];
 
@@ -52,31 +79,14 @@ if( isset( $_POST["submit"] ) ){
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':uid', $uid);
     $stmt->bindValue(':pid', $pid);
-    $stmt->bindValue(':rating', $review);
-    $stmt->bindValue(':review', $rating);
+    $stmt->bindValue(':rating', $rating);
+    $stmt->bindValue(':review', $review);
     $stmt->execute();
+
+    loadQuery();
+
 }else{
-
-    $pid= $_GET['parking'];
-
-    try {
-        $pdo = new PDO('mysql:host=localhost;dbname=parkingapp', 'web', '4ww3');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $result = $pdo->query("SELECT * FROM parkingspot WHERE pid= $pid");
-
-
-        foreach ($result as $ROW) {
-            $name = $ROW['name'];
-            $price = $ROW['price'];
-            $discription= $ROW['discription'];
-            $longitude= $ROW['longitude'];
-            $latitude= $ROW['latitude'];
-        }
-
-    }
-    catch (PDOException $e) {
-        echo $e->getMessage();
-    }
+    loadQuery();
 }
 ?>
 
@@ -139,7 +149,7 @@ if( isset( $_POST["submit"] ) ){
             <div class="reviews">
 
                 <div id="submitReview">
-                    <form id="reviewform" action="parking.php?parking=<?=$pid?>" method="post" onsubmit="return validateReview(this)">
+                    <form id="reviewform" action="parking.php?parking=<?=$pid?>" method="post" onsubmit="return true">
                         <fieldset>
                             <textarea id="ParkingSpotDiscription" rows="4" cols="50" name="review" form="reviewform" placeholder="Enter Your review here"></textarea><br>
                             <div class=rating>

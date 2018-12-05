@@ -1,4 +1,4 @@
-/* Global variables for header and footer 
+/* Global variables for header and footer
 heights used to change in the media queries */
 :root {
     --header-size: 80px;
@@ -39,7 +39,7 @@ to offset the full size page wrap */
   }
 /* used to offset the body content from the footer */
 
-/* if there is not enough contnet on the page the footer will 
+/* if there is not enough contnet on the page the footer will
 stick to the bottom of the page */
 
 /* adding an empty block of the same size as the footer
@@ -51,7 +51,7 @@ to offset the full size page wrap at the bottom */
 }
 
 /* footer height is set by the global variable */
-footer { 
+footer {
     height: var(--footer-size);
 }
 
@@ -106,7 +106,7 @@ footer{
 /* when you hover on the nav buttons */
 .nav a:hover {
   background-color: #E8E8E8;
-  border-color: white;  
+  border-color: white;
 }
 
 /* current style for the active page */
@@ -168,14 +168,24 @@ select{
 
 .submit-button:hover , #register a:hover {
     background-color: #BFBFBF;
-    border-color: #9B9B9B;  
+    border-color: #9B9B9B;
   }
 
 #login{
     width: 50%;
 }
 
-fieldset {  
+.msgBanner{
+    background-color: #ff9999;
+    color: black;
+    line-height: 40px;
+    height: 40px;
+    width: 100%;
+    border-top: solid #ff8080 1px;
+    margin: 0;
+}
+
+fieldset {
     padding: 1em;
     font:80%/1 sans-serif;
     border:1px solid transparent;
@@ -214,7 +224,7 @@ legend {
     .nav a {
         padding: 0.5em 2em;
     }
-    
+
     body{
         font-size: 125%;
     }
@@ -231,7 +241,7 @@ legend {
         --header-size: 210px;
         --footer-size: 50px;
     }
-    
+
     body{
         font-size: 200%;
     }
@@ -252,4 +262,3 @@ legend {
         width: 200px;
     }
 }
-
