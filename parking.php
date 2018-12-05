@@ -42,30 +42,6 @@ function loadQuery() {
     }
 }
 
-// ini_set('display_errors', 1);
-// if( isset( $_POST["submit"] ) ){
-//     $pdo = new PDO('mysql:host=localhost;dbname=parkingapp', 'web', '4ww3');
-//
-//     $uid = "1";
-//     $name = $_POST["Name"];
-//     $price = $_POST["Price"];
-//     $discription = $_POST["Discription"];
-//     $longitude = $_POST["longitude"];
-//     $latitude = $_POST["latitude"];
-//     $photo = $_POST["myFile"];
-//
-//     $sql = 'INSERT INTO parkingspot(uid, name, discription, longitude, latitude, photo, price) VALUES(:uid, :name, :discription, :longitude, :latitude, :photo, :price)';
-//     $stmt = $pdo->prepare($sql);
-//     $stmt->bindValue(':uid', '1');
-//     $stmt->bindValue(':name', $name);
-//     $stmt->bindValue(':discription', $discription);
-//     $stmt->bindValue(':longitude', $longitude);
-//     $stmt->bindValue(':latitude', $latitude);
-//     $stmt->bindValue(':photo', $photo);
-//     $stmt->bindValue(':price', $price);
-//     $stmt->execute();
-//     $pid = $pdo->lastInsertId();
-// }elseif( isset( $_POST["reviewSubmit"] ) ){
 if( isset( $_POST["reviewSubmit"] ) ){
 
     $pid= $_GET['parking'];
@@ -102,6 +78,8 @@ if( isset( $_POST["reviewSubmit"] ) ){
         <div class="left">
             <!-- <img id="map" src="resources/images/parking-spot_map.png" alt="Parking Location Map"> -->
             <div id="mapid"></div>
+            <script src="resources/map.js"></script>
+            <?php echo '<script>parkingPin(',$longitude,',',$latitude,',"',$name,'");</script>';?>
         </div>
 
         <div class="right">
@@ -167,18 +145,6 @@ if( isset( $_POST["reviewSubmit"] ) ){
                 </div>
 
                 <table>
-<!--                     <tr>
-                        <td>
-                            <div>
-                                <img class="reviewProfileImage" src="resources/images/profile_small.png" alt="Reviewer Profile Photo">
-                                <span>Kunal Shah</span>
-                                <span class="stars">
-                                    5
-                                </span>
-                            </div>
-                            <p>The review goes here</p>
-                        </td>
-                    </tr> -->
 
                     <?php
                         if(!!$pid){

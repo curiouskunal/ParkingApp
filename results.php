@@ -23,6 +23,7 @@ $distance = $_GET["distance"];
 $minRating = $_GET["MinRating"];
 $maxRating = $_GET["MaxRating"];
 
+// echo '<script>mapinit(',$longitude,',',',',$latitude,',',$distance,',',');</script>';
 
 ?>
 
@@ -79,6 +80,8 @@ $maxRating = $_GET["MaxRating"];
     <div class="center">
         <!-- <img src="resources/images/Large_parking-spot_map.png" alt="Parking Map"> -->
         <div id="mapid"></div>
+        <script src="resources/map.js"></script>
+        <?php echo '<script>mapinit(',$latitude,',',$longitude,',',$distance,');</script>';?>
     </div>
 
     <div class="horizontal-wrapper">
@@ -99,9 +102,11 @@ $maxRating = $_GET["MaxRating"];
                         $result = $pdo->query("SELECT * FROM parkingspot");
 
                         foreach ($result as $ROW) {
+
                             $newPID = $ROW['pid'];
                             $ratingResult = $pdo->query("SELECT avg(rating) FROM reviews WHERE pid= $newPID");
                             $avgRating = round($ratingResult->fetchAll()[0][0],5);
+
                             echo '<tr><td>';
                             echo($ROW["name"]);
                             echo '</td><td>';
@@ -114,37 +119,20 @@ $maxRating = $_GET["MaxRating"];
                             echo($avgRating);
                             echo '</td><td>';
                             echo '<a class="submit-button" href="parking.php?parking=',$ROW['pid'],'"> Details </a>';
+                            echo '<script>setMarker("',$ROW["name"],'",',$ROW["longitude"],',',$ROW["latitude"],');</script>';
                             echo("</td></tr>");
+
+
+
                         }
+
+                        echo '<script>setMap(',$latitude,',',$longitude,');</script>';
 
                     }
                     catch (PDOException $e) {
                         echo $e->getMessage();
                     }
                 ?>
-
-                <!--
-                <tr>
-                    <td>Lot M - Spot 1A</td>
-                    <td>0.5 KM</td>
-                    <td>$50</td>
-                    <td>★★★☆☆</td>
-                    <td><a class="submit-button" href="parking.php"> Details </a></td>
-                </tr>
-                <tr>
-                    <td>Lot M - Spot 1B</td>
-                    <td>0.5 KM</td>
-                    <td>$50</td>
-                    <td>★★★☆☆</td>
-                    <td><a class="submit-button" href="parking.php"> Details </a></td>
-                </tr>
-                <tr>
-                    <td>Lot M - Spot 1C</td>
-                    <td>0.5 KM</td>
-                    <td>$50</td>
-                    <td>★★★☆☆</td>
-                    <td><a class="submit-button" href="parking.php"> Details </a></td>
-                </tr> -->
             </table>
         </div>
     </div>
